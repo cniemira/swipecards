@@ -82,10 +82,10 @@ foreach (array_keys($decks) as $cat) {
 }
 ?>
 <div>
-<small>Powered by <a href="http://siege.org" target="_new">Siege (dot) Org</a> using <a href="http://revealjs.com" target="_new">reveal.js</a> and <a href="http://mathscribe.com/author/jqmath.html" target="_new">jqMath</a></small>
+<small>Powered by <a class="remote" href="http://siege.org" target="_new">Siege (dot) Org</a> using <a class="remote" href="http://revealjs.com" target="_new">reveal.js</a> and <a class="remote" href="http://mathscribe.com/author/jqmath.html" target="_new">jqMath</a></small>
 </div>
 <script>
-$('a').each(function(){
+$('a:not(.remote)').each(function(){
  $(this).prop("onClick", null);
  $(this).bind("click", function(){ window.location = this.href; return false; });
 });
