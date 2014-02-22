@@ -1,17 +1,7 @@
 <? # vim: noai:ts=2:sw=2
 
-$x = array(
-	'eck' => array('b', 'd', 'h', 'n', 'p', 'ch', 'fl', 'sp', 'wr'),
-	'ell' => array('b', 'c', 'd', 'f', 's', 't', 'w', 'y', 'dw', 'qu', 'sh', 'sm', 'sp', 'sw'),
-	'est' => array('b', 'j', 'l', 'n', 'p', 'r', 't', 'v', 'w', 'z', 'ch', 'cr', 'gu', 'qu')
-);
+$x = array('beck','deck','heck','neck','peck','check','fleck','speck','wreck','bell','cell','dell','fell','sell','tell','well','yell','dwell','quell','shell','smell','spell','swell','best','jest','lest','nest','pest','rest','test','vest','west','zest','chest','crest','guest','quest');
 
-$words = array();
-foreach (array_keys($x) as $i) {
-  foreach ($x[$i] as $j) {
-		array_push($words, sprintf("<section><h1>%s%s</h1></section>\n", $j, $i));
-  }
+foreach ($x as $i) {
+	printf("<section class='random'><h1>%s</h1></section>\n", $i);
 }
-shuffle($words);
-foreach ($words as $word)
-	print $word;

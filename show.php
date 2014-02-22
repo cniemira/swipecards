@@ -5,7 +5,7 @@ if (! defined('SLIDESHOW'))
 
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="en" manifest="<?=BASE_URL?>manifest.txt">
 <head>
 <meta charset="utf-8">
 
@@ -18,31 +18,50 @@ if (! defined('SLIDESHOW'))
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<link rel="icon" href="<?=BASE_URL?>/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="<?=BASE_URL?>/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="<?=BASE_URL?>/reveal.js/css/reveal.min.css">
-<link rel="stylesheet" href="<?=BASE_URL?>/reveal.js/css/theme/serif.css" id="theme">
+<link rel="icon" href="<?=BASE_URL?>favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="<?=BASE_URL?>favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="<?=BASE_URL?>reveal.js/css/reveal.min.css">
+<link rel="stylesheet" href="<?=BASE_URL?>reveal.js/css/theme/serif.css" id="theme">
 <!--[if lt IE 9]>
-<script src="<?=BASE_URL?>/reveal.js/lib/js/html5shiv.js"></script>
+<script src="<?=BASE_URL?>reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
+<script src="<?=BASE_URL?>jquery/jquery-2.1.0.min.js"></script>
+<script src="<?=BASE_URL?>reveal.js/lib/js/head.min.js"></script>
+<script src="<?=BASE_URL?>reveal.js/js/reveal.min.js"></script>
+
 </head>
 
 <body>
 <div class="reveal">
-<div class="slides">
+<div id="deck" class="slides">
 <section>
 <h2><?=$deck['title']?></h2>
 <h4><?=$deck['desc']?></h4>
 <p><small>Use arrow keys, the control pad, or swipe to change pages.</small></p>
 </section>
-<? require_once(BASE_PATH .'/decks/'. $deck_file) ?>
+<? require_once(BASE_PATH .'decks/'. $deck_file) ?>
 </div>
 </div>
-
-<script src="<?=BASE_URL?>/reveal.js/lib/js/head.min.js"></script>
-<script src="<?=BASE_URL?>/reveal.js/js/reveal.min.js"></script>
 
 <script>
+$.fn.shuffle = function (){
+    var i = this.length, j, t;
+    if ( i == 0 ) return;
+    while ( --i ) {
+        j = Math.floor( Math.random() * ( i + 1 ) );
+        t = this[i];
+        this[i] = this[j];
+        this[j] = t;
+    }
+		return this;
+};
+
+var d = $('#deck');
+var s = d.children('.random');
+s.shuffle();
+s.detach();
+s.appendTo(d);
+
 Reveal.initialize({
 	controls: true,
 	keyboard: true,
@@ -70,8 +89,14 @@ Reveal.initialize({
 </script>
 
 <div class="share-reveal" style="position: absolute; bottom: 24px; left: 1em; z-index: 20;">
-	<a href="<?=BASE_URL?>" target="_self" style="color: #807A71; font-family: Arial; font-weight: bold; text-decoration: none; font-size: 16px;">Home</a>
+	<a href="<?=BASE_URL?>index.html" target="_self" style="color: #807A71; font-family: Arial; font-weight: bold; text-decoration: none; font-size: 16px;">Home</a>
 </div>
 
+<script>
+$('a').each(function(){
+ $(this).prop("onClick", null);
+ $(this).bind("click", function(){ window.location = this.href; return false; });
+});
+</script>
 </body>
 </html>

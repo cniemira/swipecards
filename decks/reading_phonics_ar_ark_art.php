@@ -1,17 +1,7 @@
 <? # vim: noai:ts=2:sw=2
 
-$x = array(
-	'ar'  => array('b', 'c', 'f', 'j', 'p', 't', 'ch', 'sc', 'sp', 'st'),
-	'ark' => array('',  'b', 'd', 'h', 'l', 'm', 'p', 'sh', 'sp', 'st'),
-	'art' => array('',  'c', 'd', 'm', 'p', 't', 'ch', 'sm', 'st')
-);
+$x = array('bar','car','far','jar','par','tar','char','scar','spar','star','ark','bark','dark','hark','lark','mark','park','shark','spark','stark','art','cart','dart','mart','part','tart','chart','smart','start');
 
-$words = array();
-foreach (array_keys($x) as $i) {
-  foreach ($x[$i] as $j) {
-		array_push($words, sprintf("<section><h1>%s%s</h1></section>\n", $j, $i));
-  }
+foreach ($x as $i) {
+	printf("<section class='random'><h1>%s</h1></section>\n", $i);
 }
-shuffle($words);
-foreach ($words as $word)
-	print $word;

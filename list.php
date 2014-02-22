@@ -5,7 +5,7 @@ if (! defined('SLIDESHOW'))
 
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="en" manifest="<?=BASE_URL?>manifest.txt">
 <head>
 <meta charset="utf-8">
 
@@ -16,10 +16,10 @@ if (! defined('SLIDESHOW'))
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<link rel="apple-touch-icon-precomposed" href="/static/icon.png" />
+<link rel="apple-touch-icon-precomposed" href="<?=BASE_URL?>static/icon.png" />
 
-<link rel="icon" href="<?=BASE_URL?>/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="<?=BASE_URL?>/favicon.ico" type="image/x-icon">
+<link rel="icon" href="<?=BASE_URL?>favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="<?=BASE_URL?>favicon.ico" type="image/x-icon">
 
 <style>
 @media screen and (max-width: 320px) {
@@ -46,10 +46,11 @@ img { float: right; padding: 0.5em 1em; }
 ul { list-style: disc outside none; }
 </style>
 
+<script src="<?=BASE_URL?>jquery/jquery-2.1.0.min.js"></script>
 </head>
 
 <body>
-<img src="<?=BASE_URL?>/static/logo.png" />
+<img src="<?=BASE_URL?>static/logo.png" />
 <h1>SwipeCards!</h1>
 <div><em>Free, simple flashcards. No ads, no distractions.</em></div>
 <p>I wanted a simple web-based, mobile friendly flashcard tool that wasn't cluttered up with ads, dancing animals, and colorful gimicks. It may sound old-fashioned, but when I was a kid flashcards were printed on plain 3"x5" cards. I learned best <em>when a parent helped to quiz me</em>, and I was never rewarded with a distracting jingle or cartoon. When I had kids of my own, I began looking for the latest technology-powered educational advances and was both amazed and disappointed by the number of apps which pretend to be educational tools, but are in reality simple games. While I'm a big fan of games (even educational ones), the fact that I couldn't find any acceptable substitutes for a good old deck of flashcards was disheartening. So rather than get to work on piles of bulky index cards, I decided to chop down a digital tree (better that than a real one) and put together the exact tool that I wanted.</p>
@@ -83,5 +84,11 @@ foreach (array_keys($decks) as $cat) {
 <div>
 <small>Powered by <a href="http://siege.org" target="_new">Siege (dot) Org</a> using <a href="http://revealjs.com" target="_new">reveal.js</a> and <a href="http://mathscribe.com/author/jqmath.html" target="_new">jqMath</a></small>
 </div>
+<script>
+$('a').each(function(){
+ $(this).prop("onClick", null);
+ $(this).bind("click", function(){ window.location = this.href; return false; });
+});
+</script>
 </body>
 </html>

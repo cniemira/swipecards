@@ -1,17 +1,7 @@
 <? # vim: noai:ts=2:sw=2
 
-$x = array(
-	'ale' => array('',  'b', 'd', 'g', 'h', 'm', 'p', 's', 't', 'sc', 'st', 'wh'),
-	'ame' => array('c', 'd', 'f', 'g', 'l', 'n', 's', 't', 'bl', 'sh'),
-	'ay'  => array('b', 'd', 'g', 'h', 'l', 'm', 'p', 'r', 's', 'w', 'y', 'aw', 'br', 'cl', 'gr', 'pl', 'pr', 'sl', 'st', 'sw', 'tr', 'spr')
-);
+$x = array('ale','bale','dale','gale','hale','male','pale','sale','tale','scale','stale','whale','came','dame','fame','game','lame','name','same','tame','blame','shame','bay','day','gay','hay','lay','may','pay','ray','say','way','yay','away','bray','clay','gray','play','pray','slay','stay','sway','tray','spray');
 
-$words = array();
-foreach (array_keys($x) as $i) {
-  foreach ($x[$i] as $j) {
-		array_push($words, sprintf("<section><h1>%s%s</h1></section>\n", $j, $i));
-  }
+foreach ($x as $i) {
+	printf("<section class='random'><h1>%s</h1></section>\n", $i);
 }
-shuffle($words);
-foreach ($words as $word)
-	print $word;

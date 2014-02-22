@@ -2,7 +2,6 @@
 
 $x = range('a','z');
 
-shuffle($x);
 foreach ($x as $i) {
-	printf("<section><h1>%s</h1></section>\n", $i);
+	printf("<section class='random'><h1>%s</h1></section>\n", $i);
 }

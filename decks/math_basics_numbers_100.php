@@ -1,11 +1,17 @@
-<? # vim: noai:ts=2:sw=2
+<script>
+var max = 100;
+var min = 1;
+var num = 20;
+var arr = [];
 
-$x = array();
-foreach (range('1','20') as $i) {
-	$x[] = rand('1', '100');
+while (arr.length < num) {
+	rnd = Math.floor(Math.random() * (max - min + 1)) + min;
+	if (!(rnd in arr)) {
+		arr.push(rnd);
+	}
 }
 
-shuffle($x);
-foreach ($x as $i) {
-	printf("<section><h1>%s</h1></section>\n", $i);
-}
+$(arr).each(function(i){
+	$('#deck').append("<section><h1>"+arr[i]+"</h1></section>");
+});
+</script>
