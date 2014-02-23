@@ -9,7 +9,7 @@ CACHE MANIFEST
 CACHE:
 <?=BASE_URL?>index.html
 <?=BASE_URL?>favicon.ico
-<?=BASE_URL?>jquery/jquery-2.1.0.min.js
+<?=BASE_URL?>jquery/jquery-1.11.0.min.js
 <?=BASE_URL?>mathscribe/jqmath-etc-0.4.0.min.js
 <?=BASE_URL?>reveal.js/css/reveal.min.css
 <?=BASE_URL?>reveal.js/css/theme/serif.css

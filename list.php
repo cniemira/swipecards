@@ -9,7 +9,7 @@ if (! defined('SLIDESHOW'))
 <head>
 <meta charset="utf-8">
 
-<title>SwipeCards!</title>
+<title>SwipeCards</title>
 <meta name="author" content="CJ Niemira <siege@siege.org>">
 <meta name="description" content="Free, simple flashcards. No ads, no distractions.">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -46,12 +46,14 @@ img { float: right; padding: 0.5em 1em; }
 ul { list-style: disc outside none; }
 </style>
 
-<script src="<?=BASE_URL?>jquery/jquery-2.1.0.min.js"></script>
+<link rel="stylesheet" href="<?=BASE_URL?>add2home-2.0.11/add2home.css">
+<script type="text/javascript" src="<?=BASE_URL?>add2home-2.0.11/add2home.js"></script>
+<script src="<?=BASE_URL?>jquery/jquery-1.11.0.min.js"></script>
 </head>
 
 <body>
 <img src="<?=BASE_URL?>static/logo.png" />
-<h1>SwipeCards!</h1>
+<h1>SwipeCards</h1>
 <div><em>Free, simple flashcards. No ads, no distractions.</em></div>
 <p>I wanted a simple web-based, mobile friendly flashcard tool that wasn't cluttered up with ads, dancing animals, and colorful gimicks. It may sound old-fashioned, but when I was a kid flashcards were printed on plain 3"x5" cards. I learned best <em>when a parent helped to quiz me</em>, and I was never rewarded with a distracting jingle or cartoon. When I had kids of my own, I began looking for the latest technology-powered educational advances and was both amazed and disappointed by the number of apps which pretend to be educational tools, but are in reality simple games. While I'm a big fan of games (even educational ones), the fact that I couldn't find any acceptable substitutes for a good old deck of flashcards was disheartening. So rather than get to work on piles of bulky index cards, I decided to chop down a digital tree (better that than a real one) and put together the exact tool that I wanted.</p>
 <p>SwipeCards is a collection of ridiculously simple browser-based flashcards. Just use the arrow keys, control pad, or swipe to advance through the deck. Decks are "shuffled" automatically with each reload. They don't keep score, and they don't tell you if you're right or not, because they're not meant as a game. They are meant as a tool for parents and educators to use <em>with</em> a child.</p>

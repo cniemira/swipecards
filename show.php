@@ -25,7 +25,7 @@ if (! defined('SLIDESHOW'))
 <!--[if lt IE 9]>
 <script src="<?=BASE_URL?>reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
-<script src="<?=BASE_URL?>jquery/jquery-2.1.0.min.js"></script>
+<script src="<?=BASE_URL?>jquery/jquery-1.11.0.min.js"></script>
 <script src="<?=BASE_URL?>reveal.js/lib/js/head.min.js"></script>
 <script src="<?=BASE_URL?>reveal.js/js/reveal.min.js"></script>
 
