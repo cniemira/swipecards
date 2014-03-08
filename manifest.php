@@ -6,9 +6,12 @@ if (! defined('SLIDESHOW'))
 header('Content-type: text/cache-manifest');
 ?>
 CACHE MANIFEST
+# 20140305.03
 CACHE:
 <?=BASE_URL?>index.html
 <?=BASE_URL?>favicon.ico
+<?=BASE_URL?>add2home-2.0.11/add2home.css
+<?=BASE_URL?>add2home-2.0.11/add2home.js
 <?=BASE_URL?>jquery/jquery-1.11.0.min.js
 <?=BASE_URL?>mathscribe/jqmath-etc-0.4.0.min.js
 <?=BASE_URL?>reveal.js/css/reveal.min.css
@@ -19,6 +22,7 @@ CACHE:
 <?=BASE_URL?>reveal.js/lib/js/html5shiv.js
 <?=BASE_URL?>reveal.js/plugin/markdown/markdown.js
 <?=BASE_URL?>reveal.js/plugin/markdown/showdown.js
+<?=BASE_URL?>static/analog_clock.css
 <?=BASE_URL?>static/icon.png
 <?=BASE_URL?>static/logo.png
 <?

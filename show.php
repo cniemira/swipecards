@@ -3,9 +3,12 @@
 if (! defined('SLIDESHOW'))
   trigger_error('No direct access', E_USER_ERROR);
 
+$manifest = $deck['title'] == 'PREVIEW'
+  ? '' : sprintf(' manifest="%smanifest.txt"', BASE_URL);
+
 ?>
 <!doctype html>
-<html lang="en" manifest="<?=BASE_URL?>manifest.txt">
+<html lang="en"<?=$manifest?>>
 <head>
 <meta charset="utf-8">
 
@@ -38,6 +41,7 @@ if (! defined('SLIDESHOW'))
 <h2><?=$deck['title']?></h2>
 <h4><?=$deck['desc']?></h4>
 <p><small>Use arrow keys, the control pad, or swipe to change pages.</small></p>
+<div id="shuffle_container" style="color: #807A71; font-family: Arial; font-weight: bold; font-size: 24px;"><span id="shuffle" style="cursor: pointer;">[Shuffle Deck]</span></div>
 </section>
 <? require_once(BASE_PATH .'decks/'. $deck_file) ?>
 </div>
@@ -55,12 +59,6 @@ $.fn.shuffle = function (){
     }
 		return this;
 };
-
-var d = $('#deck');
-var s = d.children('.random');
-s.shuffle();
-s.detach();
-s.appendTo(d);
 
 Reveal.initialize({
 	controls: true,
@@ -96,6 +94,15 @@ Reveal.initialize({
 $('a').each(function(){
  $(this).prop("onClick", null);
  $(this).bind("click", function(){ window.location = this.href; return false; });
+});
+
+$('#shuffle').bind("click", function(){
+  var d = $('#deck');
+  var s = d.children('.random');
+  s.shuffle();
+  s.detach();
+  s.appendTo(d);
+  $('#shuffle_container').html('<span>Shuffled</span>')
 });
 </script>
 </body>

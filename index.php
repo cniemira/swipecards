@@ -14,6 +14,7 @@ and array_key_exists('preview', $_GET)
 and preg_match('/^([\w-]+)$/', $_GET['preview'], $mx)) {
 	$deck = array('title' => 'PREVIEW');
 	$deck_file = sprintf('%s.php', $_GET['preview']);
+	header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() - 1));
  	require_once(BASE_PATH . 'show.php');
 
 } elseif (is_array($_SERVER)

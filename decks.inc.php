@@ -39,7 +39,26 @@ $decks = array(
 			),
 			'times_tables_1-10' => array(
 				'title' => 'Times tables from 1-10',
-				'desc' => 'Sequential (not shuffled) times tables for numbers 1 - 10',
+				'desc' => '2D Times tables for numbers 1 - 10',
+			),
+		),
+	),
+
+	'shapes' => array(
+		'basics' => array(
+			'polygons' => array(
+				'title' => 'Basic shapes',
+				'desc' => 'Triangle, square, pentagon, hexagon, octogon',
+			),
+			'colors' => array(
+				'title' => 'Colored shapes',
+				'desc' => 'The basic shapes in red, green, blue, yellow, orange, and purple',
+			),
+		),
+		'time' => array(
+			'analog' => array(
+				'title' => 'Analog Clocks',
+				'desc' => 'Analog clocks with three different face styles (5 minute precision)',
 			),
 		),
 	),
@@ -57,6 +76,12 @@ $decks = array(
 			),
 		),
 		'sightwords' => array(
+			'days' => array(
+				'title' => 'Days of the week',
+			),
+			'months' => array(
+				'title' => 'Month names',
+			),
 			'dolch_pre-primer' => array(
 				'title' => 'Dolch Reading Words: Pre-Primer',
 			),
