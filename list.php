@@ -52,7 +52,7 @@ ul { list-style: disc outside none; }
 </head>
 
 <body>
-<img src="<?=BASE_URL?>static/logo.png" />
+<img src="<?=BASE_URL?>static/logo.png" alt="swipecards" />
 <h1>SwipeCards</h1>
 <div><em>Free, simple flashcards. No ads, no distractions.</em></div>
 <p>I wanted a simple web-based, mobile friendly flashcard tool that wasn't cluttered up with ads, dancing animals, and colorful gimicks. It may sound old-fashioned, but when I was a kid flashcards were printed on plain 3"x5" cards. I learned best <em>when a parent helped to quiz me</em>, and I was never rewarded with a distracting jingle or cartoon. When I had kids of my own, I began looking for the latest technology-powered educational advances and was both amazed and disappointed by the number of apps which pretend to be educational tools, but are in reality simple games. While I'm a big fan of games (even educational ones), the fact that I couldn't find any acceptable substitutes for a good old deck of flashcards was disheartening. So rather than get to work on piles of bulky index cards, I decided to chop down a digital tree (better that than a real one) and put together the exact tool that I wanted.</p>
@@ -84,7 +84,7 @@ foreach (array_keys($decks) as $cat) {
 }
 ?>
 <div>
-<small>Powered by <a class="remote" href="http://siege.org" target="_new">Siege (dot) Org</a> using <a class="remote" href="http://revealjs.com" target="_new">reveal.js</a> and <a class="remote" href="http://mathscribe.com/author/jqmath.html" target="_new">jqMath</a></small>
+<small>Powered by <a class="remote" href="http://siege.org" target="_blank">Siege (dot) Org</a> using <a class="remote" href="http://revealjs.com" target="_blank">reveal.js</a> and <a class="remote" href="http://mathscribe.com/author/jqmath.html" target="_blank">jqMath</a></small>
 </div>
 <script>
 $('a:not(.remote)').each(function(){

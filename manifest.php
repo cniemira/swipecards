@@ -6,7 +6,7 @@ if (! defined('SLIDESHOW'))
 header('Content-type: text/cache-manifest');
 ?>
 CACHE MANIFEST
-# 20140305.03
+# 20140307.01
 CACHE:
 <?=BASE_URL?>index.html
 <?=BASE_URL?>favicon.ico
