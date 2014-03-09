@@ -2,7 +2,7 @@
 $s = 800;
 $m = $s/2;
 $n_sides = array(3, 4, 5, 6, 8);
-$colors = array('red', 'lime', 'blue', 'yellow', 'orangered', 'purple');
+$colors = array('red', 'lime', 'blue', 'yellow', '#F87217', 'purple');
 
 foreach($n_sides as $n) {
 	$points = array();
